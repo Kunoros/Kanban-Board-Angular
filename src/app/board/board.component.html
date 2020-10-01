@@ -1,0 +1,10 @@
+<div class="list-container">
+  <kendo-card *ngFor="let list of board.lists">
+    <h3 kendoCardTitle>{{ list.title }}</h3>
+    <ul dragula="Boards-ul" [(dragulaModel)]="list.cards">
+      <li *ngFor="let card of list.cards">
+        {{ card.title }}
+      </li>
+    </ul>
+  </kendo-card>
+</div>

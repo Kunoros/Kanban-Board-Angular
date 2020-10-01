@@ -1,0 +1,23 @@
+.list-container {
+  display: flex;
+}
+
+kendo-card {
+  margin: 10px;
+  display: flex;
+}
+
+ul {
+  min-height: 100%;
+  padding: 10px;
+}
+
+li {
+  list-style: none;
+  transition: background-color 0.2s ease-in;
+  margin: 10px;
+}
+
+li:hover {
+  background-color: lightgray;
+}
