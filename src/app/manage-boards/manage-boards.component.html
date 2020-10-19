@@ -1,7 +1,10 @@
 <div class="flex-row">
-  <kendo-card (click)="boardClicked(board.id)" *ngFor="let board of boards">
+  <kendo-card
+    (click)="boardClicked(board.board_id)"
+    *ngFor="let board of boards"
+  >
     <kendo-card-header>
-      <h1>{{ board?.name }}</h1>
+      <h1>{{ board?.board_name }}</h1>
     </kendo-card-header>
   </kendo-card>
 </div>

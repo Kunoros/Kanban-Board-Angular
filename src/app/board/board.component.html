@@ -1,10 +1,12 @@
 <div class="list-container">
-  <kendo-card *ngFor="let list of board.lists">
-    <h3 kendoCardTitle>{{ list.title }}</h3>
-    <ul dragula="Boards-ul" [(dragulaModel)]="list.cards">
-      <li *ngFor="let card of list.cards">
-        {{ card.title }}
+  <kendo-card *ngFor="let list of board">
+    <h3 class="card-title" kendoCardTitle>{{ list.list_name }}</h3>
+    <ul dragula="Boards-ul" [(dragulaModel)]="board.list_card">
+      <li *ngFor="let card of list.card">
+        <h1 class="card-name"> {{card.card_name}} </h1>
+        <p class="card-description"> {{card.card_description}} </p>
       </li>
     </ul>
   </kendo-card>
 </div>
+

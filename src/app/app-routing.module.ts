@@ -4,7 +4,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'manage-board/:id', component: BoardComponent },
+  { path: 'manage-board/board/:id', component: BoardComponent },
   { path: 'manage-boards', component: ManageBoardsComponent },
   { path: '', redirectTo: 'manage-boards', pathMatch: 'full' },
 ];

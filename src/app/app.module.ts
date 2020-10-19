@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 // Component Imports
 import { AppComponent } from './app.component';
 import { ManageBoardsComponent } from './manage-boards/manage-boards.component';
@@ -31,6 +32,7 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     DragulaModule.forRoot(),
     NavigationModule,
     ButtonsModule,
+    HttpClientModule,
   ],
   providers: [BoradService],
   bootstrap: [AppComponent],

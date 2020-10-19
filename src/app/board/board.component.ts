@@ -9,8 +9,8 @@ import { BoradService } from '../board/borad.service';
 })
 export class BoardComponent implements OnInit {
   id: string;
-
-  board;
+  board : any;
+  card: any;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -21,7 +21,10 @@ export class BoardComponent implements OnInit {
     // Get detailed board information using id from board service
     this._activatedRoute.paramMap.subscribe((params) => {
       this.id = params.get('id');
-      this.board = this._board.getBoardDetails(this.id);
+       this._board.getBoardDetails(this.id).subscribe((data) => {
+        this.board = data
+      });
+
     });
   }
 }

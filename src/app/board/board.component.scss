@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap");
+
 .list-container {
   display: flex;
 }
@@ -7,17 +11,46 @@ kendo-card {
   display: flex;
 }
 
+.card-title {
+  display: flex;
+  justify-content: center;
+  background-color: #6b8df2;
+  color: white;
+  margin: 0;
+}
+
 ul {
   min-height: 100%;
   padding: 10px;
+  background-color: white;
 }
 
 li {
   list-style: none;
   transition: background-color 0.2s ease-in;
-  margin: 10px;
+  background-color: white;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #dad7d7;
+  border-top: 2px solid #6b8df2;
+  margin-bottom: 10px;
 }
 
 li:hover {
-  background-color: lightgray;
+  background-color: #6b8df223;
+}
+
+.card-name {
+  padding: 10px;
+  letter-spacing: 1px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 600;
+}
+
+.card-description {
+  word-wrap: break-all;
+  padding: 10px;
+  line-height: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }

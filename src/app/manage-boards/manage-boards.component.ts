@@ -13,11 +13,14 @@ export class ManageBoardsComponent implements OnInit {
   constructor(private _route: Router, private _board: BoradService) {}
 
   boardClicked(board) {
-    this._route.navigate(['manage-board', board]);
+    // ? moet de click event aan de /api/board route linken van de node server
+    this._route.navigate(['manage-board/board', board]);
   }
 
   // Get induvial boards from the board service
   ngOnInit(): void {
-    this.boards = this._board.getBoards();
+    this._board.getBoards().subscribe((data) => {
+      this.boards = data;
+    });
   }
 }
