@@ -1,12 +1,40 @@
 <div class="list-container">
   <kendo-card *ngFor="let list of board">
+    <button
+      class="delete-btn"
+      mat-mini-fab
+      color="warn"
+      (click)="listDelete(list.list_id)"
+    >
+      <mat-icon class="material-icons">remove_circle</mat-icon>
+    </button>
     <h3 class="card-title" kendoCardTitle>{{ list.list_name }}</h3>
-    <ul dragula="Boards-ul" [(dragulaModel)]="board.list_card">
+    <ul dragula="card-ul" [(dragulaModel)]="board.list_card">
       <li *ngFor="let card of list.card">
-        <h1 class="card-name"> {{card.card_name}} </h1>
-        <p class="card-description"> {{card.card_description}} </p>
+        <button
+          class="delete-card-btn"
+          mat-mini-fab
+          color="warn"
+          (click)="cardDelete(card.card_id)"
+        >
+          <mat-icon class="material-icons">remove_circle</mat-icon>
+        </button>
+        <h1 class="card-name">{{ card.card_name }}</h1>
+        <p class="card-description">{{ card.card_description }}</p>
       </li>
+      <button
+        id="card-btn"
+        (click)="addCard(list.list_id)"
+        mat-fab
+        color="primary"
+        class="add-list-btn"
+      >
+        <mat-icon>add_circle</mat-icon>
+      </button>
     </ul>
   </kendo-card>
-</div>
 
+  <button (click)="addList()" mat-fab color="primary" class="add-list-btn">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</div>

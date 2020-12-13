@@ -1,10 +1,21 @@
 <div class="flex-row">
-  <kendo-card
-    (click)="boardClicked(board.board_id)"
-    *ngFor="let board of boards"
-  >
-    <kendo-card-header>
+  <kendo-card *ngFor="let board of boards">
+    <button
+      class="delete-btn"
+      mat-mini-fab
+      color="warn"
+      (click)="boardDelete(board.board_id)"
+    >
+      <mat-icon class="material-icons">remove_circle</mat-icon>
+    </button>
+    <kendo-card-header (click)="boardClicked(board.board_id)">
       <h1>{{ board?.board_name }}</h1>
+    </kendo-card-header>
+  </kendo-card>
+
+  <kendo-card (click)="createBoard()">
+    <kendo-card-header>
+      <h1>Create new board</h1>
     </kendo-card-header>
   </kendo-card>
 </div>

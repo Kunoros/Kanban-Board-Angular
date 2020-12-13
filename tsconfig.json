@@ -13,5 +13,11 @@
     {
       "path": "./tsconfig.spec.json"
     }
-]
+],
+  "compilerOptions": {
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true, 
+    "forceConsistentCasingInFileNames": true 
+  },
+  "experimentalDecorators": true,
 }

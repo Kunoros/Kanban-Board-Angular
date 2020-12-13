@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<mat-dialog-content>{{ data.message }}</mat-dialog-content>
+<mat-dialog-actions>
+  <mat-form-field>
+    <input matInput [(ngModel)]="name" />
+  </mat-form-field>
+
+  <mat-dialog-content>{{ data.description }}</mat-dialog-content>
+  <mat-dialog-actions>
+    <mat-form-field>
+      <input matInput [(ngModel)]="description" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+    <button
+      (click)="reloadPage()"
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="{ name: name, description: description, id: data.id }"
+    >
+      OK
+    </button>
+  </mat-dialog-actions></mat-dialog-actions
+>
