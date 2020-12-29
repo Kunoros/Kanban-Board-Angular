@@ -9,8 +9,15 @@
       <mat-icon class="material-icons">remove_circle</mat-icon>
     </button>
     <h3 class="card-title" kendoCardTitle>{{ list.list_name }}</h3>
-    <ul dragula="card-ul" [(dragulaModel)]="board.list_card">
-      <li *ngFor="let card of list.card">
+    <ul pDroppable="dd" (onDrop)="drop(list.list_id)">
+      <!-- dragula="card-ul" [(dragulaModel)]="list.card" -->
+      <h2 style="display: none">{{ list.list_id }}</h2>
+      <li
+        pDraggable="dd"
+        (onDragEnd)="dropLi(card.card_id)"
+        *ngFor="let card of list.card"
+        bodyData="passed"
+      >
         <button
           class="delete-card-btn"
           mat-mini-fab
@@ -27,7 +34,7 @@
         (click)="addCard(list.list_id)"
         mat-fab
         color="primary"
-        class="add-list-btn"
+        class="add-list-btn donotdrag"
       >
         <mat-icon>add_circle</mat-icon>
       </button>

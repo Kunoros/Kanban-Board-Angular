@@ -33,9 +33,6 @@ export class BoradService {
     this._http
       .post(url + `/api/boards/${id}`, { name }, { responseType: 'text' })
       .subscribe();
-    // console.log(
-    //   `name of the new List ${name} and the id of the board is ${id}`
-    // );
   }
 
   deleteBoard(id: string) {
@@ -70,6 +67,16 @@ export class BoradService {
       (cardId) => console.log(`List whith Id ${cardId} has been deleted.`),
       (err) => console.log(err)
     );
+  }
+
+  updateCard(card_list_id) {
+    this._http
+      .post(
+        url + `/api/boards/list/card/${card_list_id.card_id}`,
+        card_list_id,
+        { responseType: 'text' }
+      )
+      .subscribe();
   }
 
   refresh(boardId: string) {

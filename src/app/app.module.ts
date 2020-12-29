@@ -28,6 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ListPromtComponent } from './add-list/list-promt/list-promt.component';
 import { CardPromtComponent } from './add-card/card-promt/card-promt.component';
 
+import { DragDropModule } from 'primeng/dragdrop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,7 @@ import { CardPromtComponent } from './add-card/card-promt/card-promt.component';
     MatInputModule,
     FormsModule,
     MatIconModule,
+    DragDropModule,
   ],
   providers: [BoradService],
   bootstrap: [AppComponent],
