@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PromtDialogComponent } from './promt-dialog.component';
 
@@ -6,7 +6,7 @@ describe('PromtDialogComponent', () => {
   let component: PromtDialogComponent;
   let fixture: ComponentFixture<PromtDialogComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PromtDialogComponent ]
     })
